@@ -1,7 +1,11 @@
 package com.tutorials.hp.gridviewfilter;
 
 /**
- * Created by Oclemy on 9/11/2016 for ProgrammingWizards Channel and http://www.camposha.com.
+ * Created by Oclemy for ProgrammingWizards TV Channel and http://www.camposha.info.
+ - Our Spacecraft class.
+ - Our data object.
+ - The spacecraft will have three properties: name,propellant and destination.
+ - The values for these are passed to us via constructor, and we have corresponding getter methods to retrieve them.
  */
 public class Spacecraft {
     String name,propellant,destination;

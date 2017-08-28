@@ -8,16 +8,28 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
+/*
+- Our MainActivity class.
+- Derives from AppCompatActivity from support library.
+- First we initialize our gridview and searchview.
+- We then fill our arraylist with spacecraft objects.
+- We then handle searchview's onQueryTextListener() event, using our arrayadapter's Filter instance to filter our data as they are typed.
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /*
+    DECALARTIONS
+     */
     ArrayList<Spacecraft> spacecrafts=new ArrayList<>();
     ArrayAdapter<Spacecraft> adapter;
     GridView gv;
     SearchView sv;
 
+    /*
+    WHEN ACTIVITY IS CREATED
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<Spacecraft>(this,android.R.layout.simple_list_item_1,spacecrafts);
         gv.setAdapter(adapter);
 
-        //EVENTS
+        //SEARCHVIEW EVENTS
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -57,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    HELPER METHOD. FILL OUR ARRAYLIST WITH OBJECTS.
+     */
     private void fillData()
     {
         Spacecraft s=new Spacecraft("Voyager","Nuclear","Asteroid Belt");
