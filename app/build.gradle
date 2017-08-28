@@ -18,7 +18,11 @@ android {
         }
     }
 }
-
+/*
+- App level build.gradle.
+- We add dependencies here, in this case appcomat from support libraries.
+- This is because our MainActivity will derive from AppCompatActivity, hence supporting more earlier devices.
+ */
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
